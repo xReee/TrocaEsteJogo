@@ -4,8 +4,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Perfil">
+    tools:context=".Perfil"
+    android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen" >
 
- 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingBottom="100dp"
+        android:paddingTop="10dp"
+        android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen" >
+
+        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/imgProfileImage"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/profile_empty"
+            app:civ_border_color="#FFFFFFFF"
+            app:civ_border_width="2dp" />
+
+        <TextView
+            android:id="@+id/txtProfileName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:paddingTop="10dp"
+            android:text="Your Name"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txtProfileEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:paddingTop="10dp"
+            android:text="Your email"
+            android:textSize="20sp" />
+
+
+    </LinearLayout>
+
+
 
 </android.support.constraint.ConstraintLayout>

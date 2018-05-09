@@ -56,7 +56,7 @@ public class FirebaseMultiQuery {
         //
         return Tasks.whenAll(tasks).continueWith(new Continuation<Void, Map<DatabaseReference, DataSnapshot>>() {
             @Override
-            public Map<DatabaseReference, DataSnapshot> then(@NonNull Task<Void> task) throws Exception {
+            public Map<DatabaseReference, DataSnapshot> then(@NonNull Task<Void> task) {
                 task.getResult();
                 return new HashMap<>(snaps);
             }

@@ -14,14 +14,38 @@
         android:paddingRight="20dp"
         android:paddingTop="50dp">
 
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgCadastroFoto"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/profile_empty"
+                app:civ_border_color="#FFFFFFFF"
+                app:civ_border_width="2dp" />
+
+            <ImageButton
+                android:id="@+id/btnMudarFoto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center_horizontal"
+                android:layout_marginLeft="60dp"
+                android:scaleType="fitCenter"
+                app:srcCompat="@android:drawable/ic_menu_camera" />
+
+        </FrameLayout>
+
         <EditText
-            android:id="@+id/txtNome"
+            android:id="@+id/txtNomeCadastro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Nome"
-            android:inputType="textPersonName"
-            android:paddingBottom="20dp" />
+            android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/txtEmail"

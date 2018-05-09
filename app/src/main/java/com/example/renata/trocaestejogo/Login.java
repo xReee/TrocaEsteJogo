@@ -21,8 +21,6 @@ public class Login extends AppCompatActivity {
     EditText txtEmail, txtSenha;
     Button btnLogar, btnRegistrar, btnEsqueceu;
 
-    FirebaseMultiQuery firebaseMultiQuery = new FirebaseMultiQuery();
-
     private FirebaseAuth auth;
 
     @Override
@@ -34,7 +32,7 @@ public class Login extends AppCompatActivity {
         txtSenha = findViewById(R.id.txtSenha);
         btnLogar = findViewById(R.id.btnLogar);
         btnRegistrar = findViewById(R.id.btnRegistro);
-        btnEsqueceu = (Button) findViewById(R.id.btnEsquecer);
+        btnEsqueceu = findViewById(R.id.btnEsquecer);
         eventClick();
     }
 
@@ -49,7 +47,7 @@ public class Login extends AppCompatActivity {
         btnLogar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                btnLogar.setEnabled(false);
+               // btnLogar.setEnabled(false);
                 String email = txtEmail.getText().toString().trim();
                 String senha = txtSenha.getText().toString().trim();
                 login(email, senha);
@@ -71,11 +69,11 @@ public class Login extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
-                            btnLogar.setEnabled(true);
+                            //btnLogar.setEnabled(true);
                             Intent i = new Intent(Login.this, Perfil.class);
                             startActivity(i);
                     } else {
-                            btnLogar.setEnabled(true);
+                           // btnLogar.setEnabled(true);
                             alert("email ou senha errados");
                         }
 
