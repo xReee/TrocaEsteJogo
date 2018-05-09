@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "858516226302",
+    "firebase_url": "https://troca-este-jogo.firebaseio.com",
+    "project_id": "troca-este-jogo",
+    "storage_bucket": "troca-este-jogo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:858516226302:android:c9a023e358dd682e",
+        "android_client_info": {
+          "package_name": "com.example.renata.trocaestejogo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "858516226302-pk2h6qj3fusiqatponojgnd1gntm3nmd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.renata.trocaestejogo",
+            "certificate_hash": "559b0d07a16e852b64dcfc93ad9485083c3f8890"
+          }
+        },
+        {
+          "client_id": "858516226302-ndhgail1bomcs6863gic3cpjhsgpdquo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMhzAK2wKFzRztIDdccl1PLTM0QVcR8xs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "858516226302-ndhgail1bomcs6863gic3cpjhsgpdquo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
