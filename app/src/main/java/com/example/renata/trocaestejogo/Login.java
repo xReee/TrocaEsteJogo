@@ -1,3 +1,12 @@
+/*
+*
+* Essa é a classe q tem a tela de login
+* Basicamente vai ser verificado os dados e permitir que o usuario entre
+* Existem dois botões adicionais -> Registro e esqueceu senha
+* Cada um leva para sua respectiva tela
+*
+* */
+
 package com.example.renata.trocaestejogo;
 
 import android.content.Intent;
@@ -33,6 +42,8 @@ public class Login extends AppCompatActivity {
         btnLogar = findViewById(R.id.btnLogar);
         btnRegistrar = findViewById(R.id.btnRegistro);
         btnEsqueceu = findViewById(R.id.btnEsquecer);
+
+        //chama evento para adicionar o click do botão
         eventClick();
     }
 
@@ -47,13 +58,21 @@ public class Login extends AppCompatActivity {
         btnLogar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // btnLogar.setEnabled(false);
+                //recupera os dados digitados
+
+               // btnLogar.setEnabled(false); // kkkk essa foi uma tentativa fail de fazer a requisição esperar
+
+                //TODO: Esperar o processo terminar no lugar de liberar pra pessoa clicar mil vezes no botão
+                //TODO: Daí abre mil páginas; tem q colocar tipo um sleep com uma animação na tela
                 String email = txtEmail.getText().toString().trim();
                 String senha = txtSenha.getText().toString().trim();
+
+                //tenta logar
                 login(email, senha);
             }
         });
 
+        //leva pra tela de lembrar senha
         btnEsqueceu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,17 +82,19 @@ public class Login extends AppCompatActivity {
         });
     }
 
+    //testa e faz o login
     private void login(String email, String senha) {
         auth.signInWithEmailAndPassword(email, senha)
                 .addOnCompleteListener(Login.this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
-                            //btnLogar.setEnabled(true);
+
+                            //se deu certo, então ele inicia a tela
                             Intent i = new Intent(Login.this, Perfil.class);
                             startActivity(i);
+
                     } else {
-                           // btnLogar.setEnabled(true);
                             alert("email ou senha errados");
                         }
 
@@ -86,6 +107,7 @@ public class Login extends AppCompatActivity {
         Toast.makeText(Login.this, s, Toast.LENGTH_SHORT).show();
     }
 
+    //conecta ao firebase
     @Override
     protected void onStart() {
         super.onStart();

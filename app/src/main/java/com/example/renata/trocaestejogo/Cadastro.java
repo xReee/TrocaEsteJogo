@@ -1,3 +1,13 @@
+
+
+/*
+Essa é a tela de cadastro
+Basicamente o usuário preenche tudo e aperta no botão de cadastrar
+TODO: Conseguir salvar imagem de perfil no firebase storage
+TODO: Fazer o usuário esperar o processo de cadastro terminar
+
+*/
+
 package com.example.renata.trocaestejogo;
 
 import android.app.ProgressDialog;
@@ -62,8 +72,10 @@ public class Cadastro extends AppCompatActivity {
         btnTrocaFoto = findViewById(R.id.btnMudarFoto);
         imgPerfil = findViewById(R.id.imgCadastroFoto);
 
+        //instancia do firebase
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
+        //adiciona os eventos de click
         eventoClick();
     }
 
@@ -79,6 +91,7 @@ public class Cadastro extends AppCompatActivity {
         btnRegistrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //pega os dados digitados para salvar no banco
                 nome =  txtNome.getText().toString().trim();
                 email = txtEmail.getText().toString().trim();
                 senha = txtSenha.getText().toString().trim();
@@ -87,6 +100,7 @@ public class Cadastro extends AppCompatActivity {
                 if (nome == "" || email == "" || senha == ""  ) {
                     Toast.makeText(Cadastro.this, "Algo em branco!",Toast.LENGTH_LONG).show();
                 } else {
+                    //cria um usuario e chama a função de salvar no banco
                     User newUser = new User(email, senha, nome, imgPerfil);
 
                     criarUser(newUser);
@@ -97,6 +111,7 @@ public class Cadastro extends AppCompatActivity {
             }
         });
 
+        //chama o botão de importar foto
         btnTrocaFoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -108,6 +123,7 @@ public class Cadastro extends AppCompatActivity {
 
     }
 
+    //aqui é só pra pegar a foto da galeria
     @Override
     protected void onActivityResult(int reqCode, int resultCode, Intent data) {
         super.onActivityResult(reqCode, resultCode, data);
@@ -143,12 +159,14 @@ public class Cadastro extends AppCompatActivity {
 //        }
     }
 
+    //autentico e dps guardo o registro no firebase
     private void criarUser(final User newUser) {
         auth.createUserWithEmailAndPassword(newUser.getEmail(), newUser.getSenha())
                 .addOnCompleteListener(Cadastro.this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
+                            //se deu certo  o email e a senha então eu salvo o registo no banco
                             writeNewUser(auth.getUid(), newUser);
                             alert("Usuário cadastro com sucesso");
                             Intent i = new Intent(Cadastro.this, Perfil.class);
@@ -167,10 +185,12 @@ public class Cadastro extends AppCompatActivity {
 
     private void writeNewUser(String uid, User user) {
            try {
+               //pego meu novo registro (de autenticação e salvo no banco)
                mDatabase.child("users").child(uid).setValue(user.getEmail());
                mDatabase.child("users").child(uid).child("email").setValue(user.getEmail());
                mDatabase.child("users").child(uid).child("nome").setValue(user.getNome());
 
+               /// TODO: ENVIAR IMAGEM PRO STORAGE DO FIREBASE
 
                StorageReference storageRef = this.storageRef.getReference().child("users").child(uid);
 
@@ -186,6 +206,7 @@ public class Cadastro extends AppCompatActivity {
         }
     }
 
+    ///TODO: Tem essa função mas ela n está pronta
     private void uploadImage(String uid, String local) {
 
         if(filePath != null)

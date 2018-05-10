@@ -1,3 +1,22 @@
+/*
+*
+* Não terminei essa tela, na vdd não fiz quase nada
+*
+*
+* Mas essa é a tela de perfil, aqui o usuario pode editar sua foto e configurações
+* Além disso, adicionar novos jogos e/ou editar os já existentes
+*
+*
+TODO:  1) Recuperar dados do firebase
+TODO:  2) Colocar os dados presentes na tela de forma 'bonita'
+TODO:  3) Fazer uma tela para editar esse perfil
+TODO:  4) Adicionar jogos
+TODO:  5) LogOut
+*
+*/
+
+
+
 package com.example.renata.trocaestejogo;
 
 import android.os.Build;
@@ -7,6 +26,7 @@ import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -43,6 +63,7 @@ public class Perfil extends AppCompatActivity {
         email = findViewById(R.id.txtProfileEmail);
         name = findViewById(R.id.txtProfileName);
 
+        ///TODO: Recuperar dados do firebase e jogar pra tela de perfil
         DatabaseReference user = FirebaseDatabase.getInstance().getReference("users").child(auth.getUid()).child("name");
 
         //name.setText(user.child(auth.getUid()).child("name").toString());
@@ -50,8 +71,11 @@ public class Perfil extends AppCompatActivity {
         user.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                name.setText(dataSnapshot.getValue(String.class));
-//                Log.i(TAG, dataSnapshot.getValue(String.class);
+                try {
+                    name.setText(dataSnapshot.getValue(String.class));
+                } catch(Exception e) {
+                    Toast.makeText(Perfil.this, "Deu ruim" + dataSnapshot.getValue(String.class), Toast.LENGTH_SHORT).show();
+                }
             }
 
             @Override
@@ -59,6 +83,8 @@ public class Perfil extends AppCompatActivity {
                // Log.w(TAG, "onCancelled", databaseError.toException());
             }
         });
+      //  mPostReference.addValueEventListener(postListener);
+
 
     }
 
@@ -73,11 +99,14 @@ public class Perfil extends AppCompatActivity {
 
     }
 
+
+    //função de logOut já está pronta, mas ainda não a coloquei em nenhum lugar
     private void logout(){
         Conexao.logOut();
         finish();
     }
 
+    //nada aqui
     private void verificaUser() {
         if (user == null) {
             finish();

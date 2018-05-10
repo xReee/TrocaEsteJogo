@@ -1,3 +1,7 @@
+
+
+// Essa é a classe do usuário, está meio desorganizada, mas funciona bem xD
+
 package com.example.renata.trocaestejogo;
 
 import android.graphics.drawable.Drawable;

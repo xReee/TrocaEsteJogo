@@ -1,3 +1,10 @@
+
+/*
+*
+* Essa classe é só para conectar ao firebase
+*
+* */
+
 package com.example.renata.trocaestejogo;
 
 import android.support.annotation.NonNull;

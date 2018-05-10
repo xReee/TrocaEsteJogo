@@ -1,3 +1,10 @@
+/*
+*
+* Tela para redefinir senha
+*
+* */
+
+
 package com.example.renata.trocaestejogo;
 
 import android.support.annotation.NonNull;
@@ -25,6 +32,8 @@ public class ResetSenha extends AppCompatActivity {
         setContentView(R.layout.activity_reset_senha);
         txtEmail = findViewById(R.id.txtResetEmail);
         btnResetSenha = findViewById(R.id.btnResetSenha);
+
+        //adiciona evento de click ao botão
         eventoClick();
     }
 
@@ -39,6 +48,7 @@ public class ResetSenha extends AppCompatActivity {
     }
 
     private void resetSenha(String email) {
+        //verifica o email e chama uma func do firebase para enviar um email de redefinição de senha
         auth.sendPasswordResetEmail(email)
                 .addOnCompleteListener(ResetSenha.this, new OnCompleteListener<Void>() {
                     @Override

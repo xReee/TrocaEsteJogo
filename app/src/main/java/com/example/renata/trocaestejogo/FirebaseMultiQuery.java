@@ -1,3 +1,12 @@
+
+/*
+*
+* Essa é uma classe do firebase que suporta multithread
+* Mas não consegui usar :(
+*
+* */
+
+
 package com.example.renata.trocaestejogo;
 
 import android.support.annotation.NonNull;
