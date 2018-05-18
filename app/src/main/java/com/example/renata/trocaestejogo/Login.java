@@ -9,13 +9,16 @@
 
 package com.example.renata.trocaestejogo;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -26,9 +29,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class Login extends AppCompatActivity {
-
     EditText txtEmail, txtSenha;
     Button btnLogar, btnRegistrar, btnEsqueceu;
+
+    private ProgressBar spinner;
+
 
     private FirebaseAuth auth;
 
@@ -43,6 +48,9 @@ public class Login extends AppCompatActivity {
         btnRegistrar = findViewById(R.id.btnRegistro);
         btnEsqueceu = findViewById(R.id.btnEsquecer);
 
+        spinner = (ProgressBar)findViewById(R.id.progressBar1);
+        spinner.setVisibility(View.GONE);
+
         //chama evento para adicionar o click do botão
         eventClick();
     }
@@ -55,20 +63,34 @@ public class Login extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
         btnLogar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //recupera os dados digitados
+                try {
 
-               // btnLogar.setEnabled(false); // kkkk essa foi uma tentativa fail de fazer a requisição esperar
+                    //recupera os dados digitados
 
-                //TODO: Esperar o processo terminar no lugar de liberar pra pessoa clicar mil vezes no botão
-                //TODO: Daí abre mil páginas; tem q colocar tipo um sleep com uma animação na tela
-                String email = txtEmail.getText().toString().trim();
-                String senha = txtSenha.getText().toString().trim();
+                    // btnLogar.setEnabled(false); // kkkk essa foi uma tentativa fail de fazer a requisição esperar
 
-                //tenta logar
-                login(email, senha);
+                    //TODO: Esperar o processo terminar no lugar de liberar pra pessoa clicar mil vezes no botão
+                    //TODO: Daí abre mil páginas; tem q colocar tipo um sleep com uma animação na tela
+                    String email = txtEmail.getText().toString().trim();
+                    String senha = txtSenha.getText().toString().trim();
+
+
+
+
+                    //tenta logar
+                    spinner.setVisibility(View.VISIBLE);
+                    getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
+                            WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+                    login(email, senha);
+                } catch (Exception e) {
+                    alert("Algo está errado");
+                    getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+                    spinner.setVisibility(View.GONE);
+                }
             }
         });
 
@@ -89,6 +111,7 @@ public class Login extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
+                            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
 
                             //se deu certo, então ele inicia a tela
                             Intent i = new Intent(Login.this, Perfil.class);
@@ -96,6 +119,9 @@ public class Login extends AppCompatActivity {
 
                     } else {
                             alert("email ou senha errados");
+                            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+                            spinner.setVisibility(View.GONE);
+
                         }
 
                 }
