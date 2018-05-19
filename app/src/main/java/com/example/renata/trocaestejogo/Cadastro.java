@@ -58,12 +58,12 @@ public class Cadastro extends AppCompatActivity {
 
 
     private String nome, email, senha;
-
+//
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro);
-
+//
         txtNome = findViewById(R.id.txtNomeCadastro);
         txtEmail = findViewById(R.id.txtEmail);
         txtSenha = findViewById(R.id.txtSenha);
@@ -75,10 +75,10 @@ public class Cadastro extends AppCompatActivity {
         //instancia do firebase
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
-        //adiciona os eventos de click
+//        adiciona os eventos de click
         eventoClick();
     }
-
+//
 
     private void eventoClick() {
         btnCancelar.setOnClickListener(new View.OnClickListener() {

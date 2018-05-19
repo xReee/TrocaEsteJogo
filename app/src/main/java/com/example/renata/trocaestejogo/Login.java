@@ -48,7 +48,7 @@ public class Login extends AppCompatActivity {
         btnRegistrar = findViewById(R.id.btnRegistro);
         btnEsqueceu = findViewById(R.id.btnEsquecer);
 
-        spinner = (ProgressBar)findViewById(R.id.progressBar1);
+        spinner = findViewById(R.id.progressBar1);
         spinner.setVisibility(View.GONE);
 
         //chama evento para adicionar o click do botão
@@ -73,13 +73,8 @@ public class Login extends AppCompatActivity {
 
                     // btnLogar.setEnabled(false); // kkkk essa foi uma tentativa fail de fazer a requisição esperar
 
-                    //TODO: Esperar o processo terminar no lugar de liberar pra pessoa clicar mil vezes no botão
-                    //TODO: Daí abre mil páginas; tem q colocar tipo um sleep com uma animação na tela
                     String email = txtEmail.getText().toString().trim();
                     String senha = txtSenha.getText().toString().trim();
-
-
-
 
                     //tenta logar
                     spinner.setVisibility(View.VISIBLE);
@@ -111,11 +106,16 @@ public class Login extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
-                            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+                    //        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
 
                             //se deu certo, então ele inicia a tela
-                            Intent i = new Intent(Login.this, Perfil.class);
-                            startActivity(i);
+                            try {
+                                Intent i = new Intent(Login.this, Perfil.class);
+                                startActivity(i);
+                            } catch (Exception e) {
+                                alert("erro:" + e );
+                            }
+
 
                     } else {
                             alert("email ou senha errados");

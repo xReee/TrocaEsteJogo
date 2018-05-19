@@ -53,10 +53,10 @@ public class Perfil extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (Build.VERSION.SDK_INT < 16) {
-            getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                    WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        }
+//        if (Build.VERSION.SDK_INT < 16) {
+//            getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+//                    WindowManager.LayoutParams.FLAG_FULLSCREEN);
+//        }
 
         setContentView(R.layout.activity_perfil);
 
@@ -64,25 +64,25 @@ public class Perfil extends AppCompatActivity {
         name = findViewById(R.id.txtProfileName);
 
         ///TODO: Recuperar dados do firebase e jogar pra tela de perfil
-        DatabaseReference user = FirebaseDatabase.getInstance().getReference("users").child(auth.getUid()).child("name");
+//        DatabaseReference user = FirebaseDatabase.getInstance().getReference("users").child(auth.getUid()).child("name");
 
         //name.setText(user.child(auth.getUid()).child("name").toString());
 
-        user.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                try {
-                    name.setText(dataSnapshot.getValue(String.class));
-                } catch(Exception e) {
-                    Toast.makeText(Perfil.this, "Deu ruim" + dataSnapshot.getValue(String.class), Toast.LENGTH_SHORT).show();
-                }
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-               // Log.w(TAG, "onCancelled", databaseError.toException());
-            }
-        });
+//        user.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                try {
+//                    name.setText(dataSnapshot.getValue(String.class));
+//                } catch(Exception e) {
+//                    Toast.makeText(Perfil.this, "Deu ruim" + dataSnapshot.getValue(String.class), Toast.LENGTH_SHORT).show();
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//               // Log.w(TAG, "onCancelled", databaseError.toException());
+//            }
+//        });
       //  mPostReference.addValueEventListener(postListener);
 
 
@@ -93,25 +93,25 @@ public class Perfil extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        auth = Conexao.getFirebaseAuth();
-        user = Conexao.getFirebaseUser();
-        verificaUser();
+//        auth = Conexao.getFirebaseAuth();
+//        user = Conexao.getFirebaseUser();
+//        verificaUser();
 
     }
 
 
-    //função de logOut já está pronta, mas ainda não a coloquei em nenhum lugar
-    private void logout(){
-        Conexao.logOut();
-        finish();
-    }
-
-    //nada aqui
-    private void verificaUser() {
-        if (user == null) {
-            finish();
-        } else {
-            email.setText(user.getEmail());
-        }
-    }
+//    //função de logOut já está pronta, mas ainda não a coloquei em nenhum lugar
+//    private void logout(){
+//        Conexao.logOut();
+//        finish();
+//    }
+//
+//    //nada aqui
+//    private void verificaUser() {
+//        if (user == null) {
+//            finish();
+//        } else {
+//            email.setText(user.getEmail());
+//        }
+//    }
 }
