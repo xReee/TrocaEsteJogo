@@ -23,6 +23,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -51,6 +52,8 @@ public class Cadastro extends AppCompatActivity {
     private Button btnRegistrar, btnCancelar;
     private ImageButton btnTrocaFoto;
     private ImageView imgPerfil;
+    private ProgressBar spinner;
+
     private FirebaseAuth auth;
     private DatabaseReference mDatabase;
     private FirebaseStorage storageRef = FirebaseStorage.getInstance();

@@ -76,6 +76,12 @@
             android:background="@android:color/holo_red_light"
             android:text="Cancelar"
             android:textColor="@android:color/white" />
+
+        <ProgressBar
+            android:id="@+id/progressBar2"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
