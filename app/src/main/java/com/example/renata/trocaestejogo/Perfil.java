@@ -20,6 +20,7 @@ TODO:  5) LogOut
 package com.example.renata.trocaestejogo;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
@@ -28,9 +29,11 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.Manifest;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -55,8 +58,8 @@ public class Perfil extends AppCompatActivity {
     private DatabaseReference myRef;
     private String userID;
 
-    private TextView email;
     private TextView name;
+    private Button btnGoToJogos;
 
     //RETIRAR DEPOIS
     private TextView coord1,coord2;
@@ -69,8 +72,11 @@ public class Perfil extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil);
 
-        email = findViewById(R.id.txtProfileEmail);
+
         name = findViewById(R.id.txtProfileName);
+        btnGoToJogos = findViewById(R.id.btnGoJogos);
+
+        click();
 
         //ACRESCENTEI PARA MOSTRAR A COORDENADA, LEMBRAR DE RETIRAR DEPOIS
         coord1=findViewById(R.id.coord1);
@@ -102,7 +108,6 @@ public class Perfil extends AppCompatActivity {
                 if (user == null) {
                     //sucesso
                     Log.d(TAG, "onAuthStateChanged: " + user.getUid());
-                    email.setText(user.getEmail());
                 } else {
                     Log.d(TAG, "onAuthStateChanged: signout ");
                 }
@@ -118,6 +123,16 @@ public class Perfil extends AppCompatActivity {
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
+            }
+        });
+    }
+
+    private void click() {
+        btnGoToJogos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent jogos = new Intent( Perfil.this, Jogos.class);
+                startActivity(jogos);
             }
         });
     }
@@ -207,7 +222,6 @@ public class Perfil extends AppCompatActivity {
 
             if (uInfo.getNome() != null) {
                 name.setText(uInfo.getNome());
-                email.setText(uInfo.getEmail());
             }
 
 

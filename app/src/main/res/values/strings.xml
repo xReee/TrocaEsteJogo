@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">TrocaEsteJogo</string>
+    <string name="title_activity_jogos">Jogos</string>
 </resources>

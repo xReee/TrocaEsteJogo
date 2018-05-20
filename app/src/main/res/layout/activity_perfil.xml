@@ -4,59 +4,69 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Perfil"
-    android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen" >
+    android:background="#dcdcdc"
+    android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"
+    tools:context=".Perfil">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
+        android:layout_height="match_parent"
         android:gravity="center_horizontal"
-        android:orientation="vertical"
-        android:paddingBottom="100dp"
-        android:paddingTop="10dp"
-        android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen" >
+        android:orientation="vertical">
 
-        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/imgProfileImage"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:src="@drawable/profile_empty"
-            app:civ_border_color="#FFFFFFFF"
-            app:civ_border_width="2dp" />
-
-        <TextView
-            android:id="@+id/txtProfileName"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#ffffff"
             android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingBottom="20dp"
             android:paddingTop="10dp"
-            android:text="Your Name"
-            android:textSize="20sp" />
+            android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen">
 
-        <TextView
-            android:id="@+id/txtProfileEmail"
-            android:layout_width="match_parent"
+            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/imgProfileImage"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:src="@drawable/profile_empty"
+                app:civ_border_color="#FFFFFFFF"
+                app:civ_border_width="2dp" />
+
+            <TextView
+                android:id="@+id/txtProfileName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:paddingTop="10dp"
+                android:text="Your Name"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/coord1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+
+            <TextView
+                android:id="@+id/coord2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="TextView"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnGoJogos"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:paddingTop="10dp"
-            android:text="Your email"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/coord1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:id="@+id/coord2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
-
-
+            android:layout_marginTop="20dp"
+            android:text="Meus Jogos" />
     </LinearLayout>
-
 
 
 </android.support.constraint.ConstraintLayout>
