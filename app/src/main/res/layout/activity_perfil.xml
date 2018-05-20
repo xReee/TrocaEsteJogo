@@ -43,6 +43,17 @@
             android:text="Your email"
             android:textSize="20sp" />
 
+        <TextView
+            android:id="@+id/coord1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/coord2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+
 
     </LinearLayout>
 
