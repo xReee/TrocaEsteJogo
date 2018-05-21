@@ -1,5 +1,6 @@
 package com.example.renata.trocaestejogo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -16,12 +17,17 @@ public class Jogos extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+
+        fab.setImageDrawable(getResources().getDrawable(android.R.drawable.ic_menu_add));
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent addJogo = new Intent(Jogos.this, NovoJogo.class);
+                startActivity(addJogo);
             }
         });
     }
