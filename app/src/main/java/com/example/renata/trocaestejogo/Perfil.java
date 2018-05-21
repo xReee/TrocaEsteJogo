@@ -78,7 +78,8 @@ public class Perfil extends AppCompatActivity {
 
         click();
 
-        //ACRESCENTEI PARA MOSTRAR A COORDENADA, LEMBRAR DE RETIRAR DEPOIS
+        //ACRESCENTEI PARA MOSTRAR A COORDENADA, LEMBRAR DE RETIRAR DEPOIS - ok
+        //TODO: usar essas coordenas pra algo
         coord1=findViewById(R.id.coord1);
         coord2=findViewById(R.id.coord2);
 
