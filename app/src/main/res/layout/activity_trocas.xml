@@ -34,12 +34,6 @@
             android:text="Nome do Jogo"
             android:textSize="24sp" />
 
-        <TextView
-            android:id="@+id/lblTrocasEstadoJogo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Usado" />
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -70,7 +64,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/txtNinguem"
+        android:id="@+id/lblNinguem"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center_vertical|center_horizontal"
