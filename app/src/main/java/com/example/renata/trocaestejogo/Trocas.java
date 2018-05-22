@@ -55,6 +55,7 @@ public class Trocas extends AppCompatActivity {
 
         julgouTodos.setVisibility(julgouTodos.INVISIBLE);
 
+        btnAceitar = findViewById(R.id.btnAceitar);
         btnRecusar = findViewById(R.id.btnRecusar);
 
         users  = new HashMap<>();
