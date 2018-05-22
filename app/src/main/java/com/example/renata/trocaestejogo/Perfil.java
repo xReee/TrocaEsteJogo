@@ -59,7 +59,8 @@ public class Perfil extends AppCompatActivity {
     private String userID;
 
     private TextView name;
-    private Button btnGoToJogos;
+    private Button btnGoToJogos, btnGOTOTrocarJogos;
+
 
     //RETIRAR DEPOIS
     private TextView coord1,coord2;
@@ -75,7 +76,7 @@ public class Perfil extends AppCompatActivity {
 
         name = findViewById(R.id.txtProfileName);
         btnGoToJogos = findViewById(R.id.btnGoJogos);
-
+        btnGOTOTrocarJogos = findViewById(R.id.btnTrocarJogos);
         click();
 
         //ACRESCENTEI PARA MOSTRAR A COORDENADA, LEMBRAR DE RETIRAR DEPOIS - ok
@@ -129,6 +130,7 @@ public class Perfil extends AppCompatActivity {
     }
 
     private void click() {
+
         btnGoToJogos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -136,7 +138,18 @@ public class Perfil extends AppCompatActivity {
                 startActivity(jogos);
             }
         });
+
+
+        btnGOTOTrocarJogos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent jogos = new Intent( Perfil.this, Trocas.class);
+                startActivity(jogos);
+            }
+        });
     }
+
+
 
     //Verifica se tem a permissão para saber a localização do usuario
     public boolean checkLocationPermission(){

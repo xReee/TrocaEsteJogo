@@ -27,7 +27,8 @@
             android:name=".Jogos"
             android:label="@string/title_activity_jogos"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".NovoJogo"></activity>
+        <activity android:name=".NovoJogo" />
+        <activity android:name=".Trocas"></activity>
     </application>
 
 </manifest>
