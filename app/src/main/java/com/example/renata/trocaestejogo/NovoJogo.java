@@ -92,26 +92,16 @@ public class NovoJogo extends AppCompatActivity {
 
     private void addJogo(String nome, String preco, String usado) {
         try {
+            mDatabase.child("users").child(userID).child("Jogos").child(nome).child("Nome").setValue(nome);
             mDatabase.child("users").child(userID).child("Jogos").child(nome).child("Preco").setValue(preco);
             mDatabase.child("users").child(userID).child("Jogos").child(nome).child("Usado").setValue(usado);
+            mDatabase.child("users").child(userID).child("Jogos").child(nome).child("Ativo").setValue("false");
+            mDatabase.child("users").child(userID).child("Jogos").child(nome).child("Trocado").setValue("false");
             Toast.makeText(NovoJogo.this, "Cadastrado!", Toast.LENGTH_LONG).show();
             finish();
         } catch (Exception e ){
             Toast.makeText(NovoJogo.this, "Erro", Toast.LENGTH_LONG).show();
         }
     }
-
-    /*
-    *
-                //pego meu novo registro (de autenticação e salvo no banco)
-                   mDatabase.child("users").child(uid).setValue(user.getEmail());
-                   mDatabase.child("users").child(uid).child("email").setValue(user.getEmail());
-                   mDatabase.child("users").child(uid).child("nome").setValue(user.getNome());
-
-    * */
-
-
-
-
 
 }
