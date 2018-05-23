@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">TrocaEsteJogo</string>
+    <string name="title_activity_jogos">Jogos</string>
+    <string name="jogos">Hry</string>
+    <string name="jogo">Hra</string>
+
+    <!--cadastro-->
+    <string name="nome">Jméno</string>
+    <string name="senha">Heslo</string>
+    <string name="registrar">Zaregistrujte se</string>
+    <string name="cancelar">Zrušit</string>
+
+    <!--Perfil-->
+    <string name="trocar_jogos">Trocar Jogos</string>
+
+    <!--resetar_senha-->
+    <string name="resetar_senha">Trocar senha</string>
+
+    <!--Trocas-->
+    <string name="Aceitar">Aceitar</string>
+    <string name="Recusar">Recusar</string>
+    <string name="acabouGente"> Opa! Acabaram os jogos por hora! </string>
+
+    <!--Novo jogo-->
+    <string name="Preco">Preço</string>
+    <string name="Usado">Usado</string>
+    <string name="adicionar">Adicionar</string>
+
+
+    <!--Login-->
+    <string name="n_tem_conta">Não tem conta?</string>
+    <string name="esqueceu_senha">Esqueceu sua senha?</string>
+
+
+</resources>
