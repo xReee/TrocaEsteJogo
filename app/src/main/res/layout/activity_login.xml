@@ -79,12 +79,5 @@
             android:text="Esqueceu sua senha?"
             android:textColor="@android:color/holo_blue_dark" />
 
-        <ProgressBar
-            android:id="@+id/progressBar1"
-            style="?android:attr/progressBarStyleLarge"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_centerHorizontal="true" />
-
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

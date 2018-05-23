@@ -15,7 +15,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nome" />
+            android:text="@string/nome" />
 
         <EditText
             android:id="@+id/txtNJogoNome"
@@ -29,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
-            android:text="Preço" />
+            android:text="@string/Preco" />
 
         <EditText
             android:id="@+id/txtNJogoPreco"
@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:checked="true"
             android:paddingTop="10dp"
-            android:text="Usado"
+            android:text="@string/Usado"
             android:textOff="Usado"
             android:textOn="Novo"
             android:textSize="18sp" />
@@ -54,7 +54,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Adicionar" />
+            android:text="@string/adicionar" />
 
         <ProgressBar
             android:id="@+id/prb"

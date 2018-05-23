@@ -27,6 +27,6 @@
             android:id="@+id/btnResetSenha"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Resetar" />
+            android:text="@string/resetar_senha" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

@@ -18,6 +18,12 @@
         tools:layout_editor_absoluteY="20dp">
 
         <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/nome" />
+
+        <TextView
             android:id="@+id/lblTrocasNomeUsuario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -25,6 +31,12 @@
             android:textColor="?attr/actionModeSplitBackground"
             android:textSize="30sp"
             android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/jogo" />
 
         <TextView
             android:id="@+id/lblTrocasNomeJogo"
@@ -49,7 +61,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginRight="50dp"
                 android:background="@android:color/holo_red_dark"
-                android:text="Recusar"
+                android:text="@string/Recusar"
                 android:textColor="@android:color/background_light" />
 
             <Button
@@ -57,7 +69,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="@android:color/holo_green_dark"
-                android:text="Aceitar"
+                android:text="@string/Aceitar"
                 android:textColor="@android:color/background_light" />
         </LinearLayout>
 
@@ -68,5 +80,5 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center_vertical|center_horizontal"
-        android:text="Opa! Parece que você já julgou todo mundo" />
+        android:text="@string/acabouGente" />
 </android.support.constraint.ConstraintLayout>

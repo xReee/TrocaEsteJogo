@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TrocaEsteJogo</string>
+    <string name="title_activity_jogos">Games</string>
+    <string name="jogos">Games</string>
+    <string name="jogo">Game</string>
+
+    <!--cadastro-->
+    <string name="nome">Name</string>
+    <string name="senha">Password</string>
+    <string name="registrar">Register</string>
+    <string name="cancelar">Cancel</string>
+
+    <!--Perfil-->
+    <string name="trocar_jogos">Exchange my games</string>
+
+    <!--resetar_senha-->
+    <string name="resetar_senha">Change my password</string>
+
+    <!--Trocas-->
+    <string name="Aceitar">Yes</string>
+    <string name="Recusar">No</string>
+
+    <!--Novo jogo-->
+    <string name="Preco">Price</string>
+    <string name="Usado">It\'s used\?</string>
+    <string name="adicionar">Adicionar</string>
+
+    <string name="acabouGente"> Opps! This is the end of the list! </string>
+    <!--Login-->
+    <string name="n_tem_conta">Create new account.</string>
+    <string name="esqueceu_senha">Forgot password.</string>
+
+</resources>

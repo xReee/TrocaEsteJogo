@@ -44,7 +44,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Nome"
+            android:hint="@string/nome"
             android:inputType="textPersonName" />
 
         <EditText
@@ -60,28 +60,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Senha"
+            android:hint="@string/senha"
             android:inputType="textPassword" />
 
         <Button
             android:id="@+id/btnRegistrar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Registrar" />
+            android:text="@string/registrar" />
 
         <Button
             android:id="@+id/btnCancelar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/holo_red_light"
-            android:text="Cancelar"
+            android:text="@string/cancelar"
             android:textColor="@android:color/white" />
 
-        <ProgressBar
-            android:id="@+id/progressBar2"
-            style="?android:attr/progressBarStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
