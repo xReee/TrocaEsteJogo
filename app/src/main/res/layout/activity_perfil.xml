@@ -28,6 +28,7 @@
                 android:id="@+id/imgProfileImage"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
+                android:contentDescription="foto de perfil - vazia"
                 android:src="@drawable/profile_empty"
                 app:civ_border_color="#FFFFFFFF"
                 app:civ_border_width="2dp" />
