@@ -23,8 +23,8 @@
 
     <!--Novo jogo-->
     <string name="Preco">Price</string>
-    <string name="Usado">It\'s used\?</string>
-    <string name="adicionar">Adicionar</string>
+    <string name="Usado">Is it used\?</string>
+    <string name="adicionar">Add</string>
 
     <string name="acabouGente"> Opps! This is the end of the list! </string>
     <!--Login-->
